@@ -1,0 +1,50 @@
+#include "stdafx.h"
+#include "conio.h"
+#include "stdlib.h"
+#include <iostream>
+#define MAX 100
+using namespace std;
+
+void cargar(int vec[], int n);
+float promedio (int vec[], int n, int i, int j);
+
+
+void main(){
+
+int vec[MAX],n,i,j;
+float p;
+cout<<"Ingrese N: ";
+cin>>n;
+cargar(vec,n);
+do{ 
+cout<<"Ingrese posicion i: ";
+cin>>i;
+cout<<"Ingrese posicion j: ";
+cin>>j;
+}while(i<0 || j<0 );
+
+
+
+p=promedio(vec,n,i,j);
+cout<<"El promedio es: "<<p;
+getch();
+}
+ void cargar (int vec[], int n){
+	 for (int i=0;i<n;i++){
+		 cin>> vec[i];
+	 }
+ }
+
+ float promedio(int vec[], int n, int i, int j){
+	 float s=0;
+	 int tam=j-i+1;
+
+	 for (int k=0;k<n;k++){
+		 if(k>=i && k<=j){
+			 s=s+vec[k];
+		 }
+	 }
+	 return s/tam;
+ }
+ 
+
