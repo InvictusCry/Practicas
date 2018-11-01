@@ -1,0 +1,49 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+#define MAX 100
+using namespace std;
+
+int fibo(int vec[], int n);
+void cargar_fibo(int vec[], int n);
+void mostrar(int vec[], int n);
+
+void main(){
+
+int vec[MAX],n;
+float p;
+cout<<"Ingrese N: ";
+cin>>n;
+cargar_fibo(vec,n);
+cout<<"Los N Fibonaccis son: "<<endl;
+mostrar(vec,n);
+getch();
+}
+
+int fibo(int n){
+	int fibo=0, a=0, b=1, k=0;
+	while(k<n){
+		fibo=a+b;
+		b=a;
+		k++;
+	}
+	return fibo;
+}
+
+ void cargar (int vec[], int n){
+	 for (int i=0;i<n;i++){
+		 cin>> vec[i];
+	 }
+ }
+
+ void cargar_fibo(int vec[], int n){
+	 for(int i=0;i<n;i++){
+		 vec[i]=fibo(i+1);
+	 }
+ }
+ 
+ void mostrar (int vec[], int n){
+	 for (int i=0;i<n;i++){
+		 cout<< vec[i]<<" ";
+	 }
+ }
